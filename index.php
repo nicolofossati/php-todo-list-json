@@ -18,7 +18,8 @@
             <h1 class="text-center">To do list:</h1>
             <div class="todo-list d-flex justify-content-center my-5">
                 <ul class="list-group col-4">
-                    <li class="list-group-item" v-for="todoItem in todoList">{{todoItem.task}}</li>
+                    <li class="list-group-item" :class="(todoItem.done==true)?'text-decoration-line-through':''"
+                        v-for="todoItem in todoList">{{todoItem.task}}</li>
                 </ul>
             </div>
 
