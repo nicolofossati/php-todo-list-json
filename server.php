@@ -23,6 +23,10 @@ $todoList = [
     ]
 ];
 
+if (isset($_POST['todoInput'])) {
+    $todoList[] = ['task' => $_POST['todoInput'], 'done' => false];
+}
+
 header('content-type: application/json');
 echo json_encode($todoList);
 

@@ -14,9 +14,21 @@
 
 <body>
     <div id="app">
-        <ul>
-            <li v-for="todoItem in todoList">{{todoItem.task}}</li>
-        </ul>
+        <div class="container mt-4">
+            <h1 class="text-center">To do list:</h1>
+            <div class="todo-list d-flex justify-content-center my-5">
+                <ul class="list-group col-4">
+                    <li class="list-group-item" v-for="todoItem in todoList">{{todoItem.task}}</li>
+                </ul>
+            </div>
+
+            <div class="d-flex justify-content-center col-3 m-auto">
+                <input v-model="todoInput" class="form-control me-2" type="text" placeholder="new task"
+                    aria-label="default input example">
+                <button class="btn btn-primary ms-2" type="submit" @click="addTodoItem"
+                    @keyup.enter="addTodoItem">Add</button>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap -->
