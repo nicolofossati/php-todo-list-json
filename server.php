@@ -14,8 +14,14 @@ if (isset($_POST['todoInput'])) {
     file_put_contents('todoList.json', $string_to_json); //sovreascrive il file todoList.json con il nuovo array aggiornato
 }
 
-if (isset($_POST['arrayIndex'])) {
-    $todoList[$_POST['arrayIndex']]['done'] = !$todoList[$_POST['arrayIndex']]['done'];
+if (isset($_POST['indexDone'])) {
+    $todoList[$_POST['indexDone']]['done'] = !$todoList[$_POST['indexDone']]['done'];
+    $string_to_json = json_encode($todoList);
+    file_put_contents('todoList.json', $string_to_json);
+}
+
+if (isset($_POST['indexDelete'])) {
+    unset($todoList[$_POST['indexDelete']]);
     $string_to_json = json_encode($todoList);
     file_put_contents('todoList.json', $string_to_json);
 }

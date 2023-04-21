@@ -4,8 +4,7 @@ createApp({
     data() {
         return {
             todoList: [],
-            todoInput: '',
-            arrayIndex: ''
+            todoInput: ''
         }
     },
     methods: {
@@ -30,7 +29,7 @@ createApp({
         },
         done(index) {
             const data = {
-                arrayIndex: index
+                indexDone: index
             };
             axios.post('server.php', data,
                 {
@@ -38,7 +37,17 @@ createApp({
                 }
             ).then(response => {
                 this.todoList = response.data;
-                this.arrayIndex = '';
+            });
+        }, deleteItem(index) {
+            const data = {
+                indexDelete: index
+            };
+            axios.post('server.php', data,
+                {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                }
+            ).then(response => {
+                this.todoList = response.data;
             });
         }
     },
