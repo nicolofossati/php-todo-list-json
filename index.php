@@ -28,7 +28,7 @@
                 <ul class="list-group col-4">
                     <li class="list-group-item d-flex justify-content-between" v-for="(todoItem,index) in todoList"
                         :key="index">
-                        <span @click="done(index)" class="task-span"
+                        <span @click="done(index)" class="task-span d-flex align-items-center"
                             :class="(todoItem.done==true)?'text-decoration-line-through':''">{{todoItem.task}}</span>
                         <div class="trash" @click="deleteItem(index)">
                             <i class="fa-solid fa-trash-can"></i>
