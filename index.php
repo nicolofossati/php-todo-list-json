@@ -19,7 +19,7 @@
             <div class="todo-list d-flex justify-content-center my-5">
                 <ul class="list-group col-4">
                     <li class="list-group-item" :class="(todoItem.done==true)?'text-decoration-line-through':''"
-                        v-for="todoItem in todoList">{{todoItem.task}}</li>
+                        v-for="(todoItem,index) in todoList" @click="done(index)" :key="index">{{todoItem.task}}</li>
                 </ul>
             </div>
 

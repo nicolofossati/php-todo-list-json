@@ -9,3 +9,8 @@ Prima assicuratevi che la vostra pagina index.php (il vostro front-end) riesca a
 Lo step successivo è quello di “testare” l’invio di un nuovo task, sapendo che manca comunque la persistenza lato server (ancora non memorizzate i dati da nessuna parte).
 Bonus
 Mostrare lo stato del task → se completato, barrare il testo
+
+Bonus 2° parte
+Permettere di segnare un task come completato facendo click sul testo
+Permettere il toggle del task (completato/non completato)
+Abilitare l’eliminazione di un task
